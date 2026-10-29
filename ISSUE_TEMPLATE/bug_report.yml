@@ -1,0 +1,31 @@
+name: Bug report
+description: Something does not work as documented.
+labels: [bug]
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: What happened?
+      description: What you did, what you expected, and what happened instead.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: How to reproduce
+      description: A minimal script or configuration that shows the problem.
+  - type: input
+    id: version
+    attributes:
+      label: Package and version
+      placeholder: tracewick/tracewick 0.1.0
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Runtime versions and how the application runs.
+      placeholder: PHP 8.4.1, ext-excimer 1.2.5, PHP-FPM, Linux x86_64
+    validations:
+      required: true
