@@ -9,5 +9,5 @@ Closes #
 - [ ] The PR title follows [Conventional Commits](https://www.conventionalcommits.org/).
 - [ ] The repository's checks pass locally.
 - [ ] Tests cover the change; no test was skipped or deleted to get CI green.
-- [ ] Public API changes are documented, and `CHANGELOG.md` is updated if users will notice.
+- [ ] Public behaviour changes are documented; generated changelogs remain owned by release-please where applicable.
 - [ ] Nothing in the change can throw into, block, or slow down the host application (fail-open).
