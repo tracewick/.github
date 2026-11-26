@@ -28,15 +28,18 @@ into where production time actually goes, per endpoint and per release.
 
 ### Status
 
-**Core, agent and Symfony bundle `1.0.0-rc.1` are published.** These are release candidates for 1.0,
-not final stable releases. Pin candidate versions explicitly and read the migration notes
-when upgrading from 0.2. The core supports PHP **8.2–8.5**; sampling requires ext-excimer.
+**Core, agent, Symfony bundle and Laravel bridge `1.0.0-rc.1` are published.** Pin candidate
+versions explicitly and read the migration notes when upgrading from 0.2.
+The core supports PHP **8.2–8.5**. Sampling requires ext-excimer.
 
 The Symfony bundle supports core `^0.2 || ^1.0`. For the candidate pair, install both
 `tracewick/symfony-bundle:1.0.0-rc.1` and `tracewick/tracewick:1.0.0-rc.1` explicitly;
 see the [Symfony installation guide](https://github.com/tracewick/symfony-bundle#install).
 The [Flex recipe](https://github.com/symfony/recipes-contrib/pull/2116) is awaiting upstream
 review; use the documented manual configuration until it is available.
+
+The Laravel bridge supports Laravel 12 and 13. Pin the bridge and core candidates
+using the [Laravel installation guide](https://github.com/tracewick/laravel#installation).
 
 ### Projects
 
@@ -45,10 +48,10 @@ review; use the documented manual configuration until it is available.
 | [tracewick/tracewick](https://github.com/tracewick/tracewick) | PHP sampling, runtimes and local spool | [1.0.0-rc.1](https://github.com/tracewick/tracewick/releases/tag/v1.0.0-rc.1) |
 | [tracewick/agent](https://github.com/tracewick/agent) | Recommended delivery sidecar; Linux amd64/arm64, binaries and GHCR | [1.0.0-rc.1](https://github.com/tracewick/agent/releases/tag/v1.0.0-rc.1) |
 | [tracewick/symfony-bundle](https://github.com/tracewick/symfony-bundle) | HTTP, Console and opt-in Messenger integration | [1.0.0-rc.1](https://github.com/tracewick/symfony-bundle/releases/tag/v1.0.0-rc.1) |
+| [tracewick/laravel](https://github.com/tracewick/laravel) | HTTP and opt-in Artisan, queue/Horizon and Octane profiling | [1.0.0-rc.1](https://github.com/tracewick/laravel/releases/tag/v1.0.0-rc.1) |
 | [tracewick/benchmarks](https://github.com/tracewick/benchmarks) | Reproducible overhead, accuracy, recovery and soak evidence | Published reports and raw data |
 
-Laravel integration remains planned. Automatic OpenTelemetry trace/span correlation is
-deferred with no target release.
+Automatic OpenTelemetry trace/span correlation is deferred with no target release.
 
 ### Delivery and installation
 
@@ -61,7 +64,8 @@ PHP `tracewick-drain` remains supported for cron, one-shot delivery and as a ref
 The RC releases include SBOMs and keyless signatures. Verification instructions:
 [core](https://github.com/tracewick/tracewick/blob/main/docs/verify-release.md) ·
 [agent archives and images](https://github.com/tracewick/agent/blob/main/deploy/verify-release.md) ·
-[Symfony bundle](https://github.com/tracewick/symfony-bundle/blob/main/docs/verify-release.md).
+[Symfony bundle](https://github.com/tracewick/symfony-bundle/blob/main/docs/verify-release.md) ·
+[Laravel bridge](https://github.com/tracewick/laravel/blob/main/docs/verify-release.md).
 Composer does not verify these signatures automatically. Agent RC images have versioned
 tags and do not replace the stable `latest` image.
 
